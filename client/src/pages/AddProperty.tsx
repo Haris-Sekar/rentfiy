@@ -1,5 +1,4 @@
 import {
-	Box,
 	Container,
 	FormControl,
 	FormControlLabel,
@@ -28,7 +27,6 @@ const AddProperty = () => {
 	const {
 		control,
 		handleSubmit,
-		setError,
 		formState: { errors },
 	} = useForm<IAddProperty>();
 	const navigate = useNavigate();
@@ -41,7 +39,7 @@ const AddProperty = () => {
 		setIsLoading(true);
 
 		try {
-			const data = await addProperty(property);
+			await addProperty(property);
 			toast("Propety added successfully!");
 			navigate("/app/sell");
 		} catch (error) {
@@ -373,6 +371,7 @@ const AddProperty = () => {
 							fontSize: "17px",
 							fontWeight: "bolder",
 						}}
+						loading={isLoading}
 						color="info"
 						onClick={handleSubmit(onSubmit, onError)}
 					>

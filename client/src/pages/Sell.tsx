@@ -72,7 +72,7 @@ const Sell = () => {
 			<Paper sx={{ pt: "5%", pl: "2%" }}>
 				{loading ? (
 					<Box sx={{ display: "flex" }}>
-						{[1, 2, 3, 4].map((e) => (
+						{[1, 2, 3, 4].map((_e) => (
 							<Stack spacing={2} sx={{ m: "1%" }}>
 								<Skeleton variant="rounded" width={210} height={40} />
 								<Skeleton variant="rounded" width={210} height={220} />

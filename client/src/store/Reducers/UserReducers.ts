@@ -1,6 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User } from "../../Types/User";
-import { API } from "../../api/api";
 
 
 interface UserState {
@@ -32,20 +31,6 @@ export const UserReducer = createSlice({
         populateUserDetails: (state, action: PayloadAction<User>) => {
             state.user = action.payload;
         },
-    }, extraReducers: (builder) => {
-        // builder
-        //     .addCase(fetchCurrentUserDetials.pending, (state) => {
-        //         state.loading = true;
-        //     })
-        //     .addCase(fetchCurrentUserDetials.fulfilled, (state, action) => {
-        //         state.currentUserDetails = action.payload.userDetails;
-        //         state.companyDetails = action.payload.companyDetails;
-        //         state.loading = false;
-        //     })
-        //     .addCase(fetchCurrentUserDetials.rejected, (state, action) => {
-        //         state.loading = false;
-        //         state.error.message = action.error.message || 'something went wrong'
-        //     })
     }
 });
 
